@@ -16,7 +16,7 @@ if [ -f "lista.txt" ]; then
 fi
 
 # Generate list of epochs
-ls -d /gws/nopw/j04/nceo_geohazards_vol1/public/LiCSAR_products/$tr/$current_dir/epochs/2025* \
+ls -d /gws/nopw/j04/nceo_geohazards_vol1/public/LiCSAR_products/$tr/$current_dir/epochs/2* \
     | awk -F'/' '{print $NF}' >> lista.txt
 
 file="lista.txt"
