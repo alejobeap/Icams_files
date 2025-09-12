@@ -41,12 +41,14 @@ for f in "${files[@]}"; do
     echo "${f##*/}"
 done > lista.txt
 
+mkdir log_ERA5
+
 # Process each folder listed in lista.txt
 while read -r line; do
     echo -e "$line"
     sbatch --qos=high \
-           --output=ICAMS_${line}_${current_dir}.out \
-           --error=ICAMS_${line}_${current_dir}.err \
+           --output=log_ERA5/ICAMS_${line}_${current_dir}.out \
+           --error=log_ERA5/ICAMS_${line}_${current_dir}.err \
            --job-name=ICAMS_${line}_${current_dir} \
            -n 8 --time=23:59:00 --mem=65536 \
            -p comet --account=comet_lics --partition=standard \
