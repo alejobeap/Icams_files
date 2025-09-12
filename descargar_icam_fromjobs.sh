@@ -25,5 +25,5 @@ fi
 # Process each folder listed in lista.txt
 while read -r line; do
     echo -e "$line"
-    sbatch --qos=high --output=ICAMS_${line}_${current_dir}.out --error=ICAMS_${line}_${current_dir}.err --job-name=ICAMS_${line}_${current_dir} -n 8 --time=23:59:00 --mem=>
+    sbatch --qos=high --output=ICAMS_${line}_${current_dir}.out --error=ICAMS_${line}_${current_dir}.err --job-name=ICAMS_${line}_${current_dir} -n 8 --time=23:59:00 --mem=65536 -p comet --account=comet_lics --partition=standard --wrap="./descargar_icam.sh"
 done < lista.txt
