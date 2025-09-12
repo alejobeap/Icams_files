@@ -17,6 +17,7 @@ fi
 
 ls -d /gws/nopw/j04/nceo_geohazards_vol1/public/LiCSAR_products/$tr/$current_dir/epochs/2025* | awk -F'/' '{print $NF}' > lista.txt
 
+
 if [ $? -ne 0 ]; then
     echo "Error: Failed to generate lista.txt. Check the directory path."
     exit 1
