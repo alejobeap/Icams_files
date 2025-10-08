@@ -15,7 +15,7 @@ tr=$(echo "$current_dir" | cut -d '_' -f1 | sed 's/^0*//' | rev | cut -c 2- | re
 
 # Define paths
 base_dir="/gws/nopw/j04/nceo_geohazards_vol1/public"
-path="$base_dir/LiCSAR_products/$tr/$current_dir/epochs/2025"*
+path="$LiCSAR_public/$tr/$current_dir/epochs/2025"*
 
 # Enable nullglob to avoid literal '*' if no match
 shopt -s nullglob
@@ -24,7 +24,7 @@ shopt -u nullglob
 
 # Fallback to .future if nothing found
 if [ ${#files[@]} -eq 0 ]; then
-    path="$base_dir/LiCSAR_products.future/$tr/$current_dir/epochs/2025"*
+    path="$LiCSAR_public/$tr/$current_dir/epochs/2025"*
     shopt -s nullglob
     files=( $path )
     shopt -u nullglob
