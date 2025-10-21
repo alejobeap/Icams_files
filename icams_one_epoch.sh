@@ -87,6 +87,8 @@ fi
 #ppwd=`pwd`
 #epoch=`basename $ppwd`
 
+
+
 #tropo_icams_date.py $epoch --region " "$wesn" " --imaging-time $ttime --dem-tif $hgt --resolution $resol
 python tropo_icams_date.py ${new_date} --region " "$wesn" " --imaging-time $tt --dem-tif $hgt --resolution $resol
 
@@ -100,7 +102,7 @@ python3 -c "import lics_processing as lp; lp.ztd2sltd('"$icamsout"', '"$U"', out
 #sys.path.append('/work/scratch-pw3/licsar/alejobea/batchdir/LiCSBAS/142D_09148_131313')
 #import Prueba as lp
 #lp.ztd2sltd('$icamsout', '$U', outif = '$sltdout')
-
+cedaarch_create_html.sh $frame ${new_date} epochs
 
 
 if [ $cleanit -gt 0 ]; then
